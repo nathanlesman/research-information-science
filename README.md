@@ -24,11 +24,13 @@ Key concepts in modern linguistic theories (e.g., universality, syntax, semantic
 ## Method
 Method:
 
-    Dataset:
-    Texts sourced from Project Gutenberg, such as Cratylus by Plato and On Interpretation by Aristotle, alongside publicly available modern linguistic texts (e.g., Chomsky’s Aspects of the Theory of Syntax).
-    Study Design:
-        Perform a comparative text analysis using computational linguistics tools.
-        Use topic modeling (e.g., LDA) to identify recurring themes across the ancient and modern texts.
-        Conduct sentiment and semantic analysis to compare the treatment of key linguistic concepts like meaning and grammar.
-    Analysis:
-    Visualize overlaps and distinctions using cluster plots and thematic heatmaps. Interpret findings to trace conceptual evolution.
+Dataset:
+Texts sourced from Project Gutenberg, such as Cratylus by Plato and On Interpretation by Aristotle, alongside publicly available modern linguistic texts (e.g., Chomsky’s Aspects of the Theory of Syntax).
+
+Study Design:
+Perform a comparative text analysis using computational linguistics tools.
+Use topic modeling (e.g., LDA) to identify recurring themes across the ancient and modern texts.
+Conduct sentiment and semantic analysis to compare the treatment of key linguistic concepts like meaning and grammar.
+
+Analysis:
+Visualize overlaps and distinctions using cluster plots and thematic heatmaps. Interpret findings to trace conceptual evolution.
