@@ -16,26 +16,21 @@ Noam Chomsky’s generative grammar highlights the influence of logical structur
 
 ## Research question and hypotheses 
 Research Question:
-How have ancient philosophical discussions on language, particularly from texts by Plato and Aristotle, influenced the development and comprehension of modern linguistic theories?
+What thematic and structural similarities exist between ancient philosophical texts on language and modern linguistic theories?
 
 Hypothesis:
-Students exposed to ancient philosophical discussions on language through curated texts from Project Gutenberg will demonstrate a deeper understanding of linguistic principles compared to those focused solely on modern frameworks.
+Key concepts in modern linguistic theories (e.g., universality, syntax, semantics) reflect themes found in ancient philosophical discussions on language, suggesting a foundational continuity.
 
 ## Method
-Dataset:
-The primary corpus will consist of freely available texts from Project Gutenberg, including:
+Method:
 
-    Cratylus by Plato (translated by Benjamin Jowett)
-    On Interpretation by Aristotle (translated by E. M. Edghill)
-    Selected works of modern linguistics theory for comparative purposes
-
-Sampling Method:
-Participants will be undergraduate linguistics students divided into two groups. The experimental group will study a curriculum integrating ancient philosophical texts, while the control group will focus solely on modern linguistic theories.
-
-Study Design:
-
-    Pre- and post-study assessments will measure participants' conceptual clarity and academic performance on linguistic principles.
-    Surveys and focus groups will provide qualitative insights into students’ perceptions of the material.
-
+    Dataset:
+    Texts sourced from Project Gutenberg, such as Cratylus by Plato and On Interpretation by Aristotle, alongside publicly available modern linguistic texts (e.g., Chomsky’s Aspects of the Theory of Syntax).
+    Study Design:
+        Perform a comparative text analysis using computational linguistics tools.
+        Use topic modeling (e.g., LDA) to identify recurring themes across the ancient and modern texts.
+        Conduct sentiment and semantic analysis to compare the treatment of key linguistic concepts like meaning and grammar.
+    Analysis:
+    Visualize overlaps and distinctions using cluster plots and thematic heatmaps. Interpret findings to trace conceptual evolution.
 Analysis:
 Statistical methods will compare assessment scores between groups to determine the impact of exposure to ancient philosophical texts. Thematic analysis of qualitative data will identify recurring patterns in participants' experiences.
