@@ -32,5 +32,3 @@ Method:
         Conduct sentiment and semantic analysis to compare the treatment of key linguistic concepts like meaning and grammar.
     Analysis:
     Visualize overlaps and distinctions using cluster plots and thematic heatmaps. Interpret findings to trace conceptual evolution.
-Analysis:
-Statistical methods will compare assessment scores between groups to determine the impact of exposure to ancient philosophical texts. Thematic analysis of qualitative data will identify recurring patterns in participants' experiences.
