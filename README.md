@@ -29,6 +29,9 @@ Texts sourced from Project Gutenberg, such as Cratylus by Plato and On Interpret
 
 Study Design:
 Perform a comparative text analysis using computational linguistics tools.
+
+## References
+
 Use topic modeling (e.g., LDA) to identify recurring themes across the ancient and modern texts.
 Conduct sentiment and semantic analysis to compare the treatment of key linguistic concepts like meaning and grammar.
 
