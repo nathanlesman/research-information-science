@@ -1,60 +1,177 @@
 # Text Preprocessing Pipeline for Project Gutenberg
 
 ## Overview
-
 This project automates the downloading, cleaning, and preprocessing of texts from Project Gutenberg for linguistic analysis. The pipeline extracts sentences, tokenizes, lemmatizes, and parses word order structures, enabling quantitative studies of grammatical innovation in multilingual contexts.
 
----
+## Table of Contents
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Workflow](#workflow)
+- [Usage Examples](#usage-examples)
+- [Output Format](#output-format)
+- [Known Limitations](#known-limitations)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Prerequisites
+
+### System Requirements
+- **Bash**: For running shell scripts (Linux/MacOS users)
+- **Python 3.8+**: Core programming environment
+- **Git**: For version control and project management
+- **At least 2GB RAM**: For processing larger texts
+- **Storage**: Minimum 1GB free space for text storage and processing
+
+### Python Libraries
+Required packages:
+```bash
+pip install -r requirements.txt
+```
+
+Contents of requirements.txt:
+```
+spacy>=3.5.0
+pandas>=1.5.0
+beautifulsoup4>=4.9.0
+requests>=2.28.0
+tqdm>=4.65.0
+nltk>=3.8.0
+```
+
+Initialize spaCy model:
+```bash
+python -m spacy download en_core_web_sm
+```
 
 ## Workflow
 
-### Step 1: Setup Environment
-Before starting, ensure you have the necessary tools and dependencies installed:
-
-#### System Requirements
-- **Bash**: To run shell scripts (Linux/MacOS users).
-- **Python 3.8+**: Install Python if it's not already available.
-
-#### Python Libraries
-Install the required Python libraries:
+### Step 1: Project Setup
+1. Clone the repository:
 ```bash
-pip install spacy
+git clone https://github.com/yourusername/gutenberg-preprocessing.git
+cd gutenberg-preprocessing
+```
 
+2. Create virtual environment (recommended):
+```bash
+python -m venv venv
+source venv/bin/activate  # Linux/MacOS
+.\venv\Scripts\activate   # Windows
+```
+
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
 
 ### Step 2: Prepare Text URLs
-Create a text file named text_urls.txt with URLs of the Project Gutenberg texts you want to process. Wach URL should be on a new line
+1. Create a text file named `text_urls.txt` with Project Gutenberg URLs:
+```
+https://www.gutenberg.org/files/1342/1342-0.txt
+https://www.gutenberg.org/files/98/98-0.txt
+```
 
-### Step 3: Download and clean texts
-Run the prepare_texts.sh script to download the texts and clean them by removing Project Gutenberg headers, footers and non ASCII characters
+2. Verify URL format:
+```bash
+python verify_urls.py text_urls.txt
+```
 
-with the command: ./prepare_texts.sh text_urls.txt raw_texts/
+### Step 3: Download and Clean Texts
+Execute the preparation script:
+```bash
+chmod +x prepare_texts.sh  # Make script executable
+./prepare_texts.sh text_urls.txt raw_texts/
+```
 
+The script performs:
+- Downloads texts from provided URLs
+- Removes Project Gutenberg headers and footers
+- Cleans non-ASCII characters
+- Normalizes whitespace and line endings
 
 ### Step 4: Preprocess Texts
-Run the preprocess_texts.py script to tokenize, lemmatize, and parse cleaned texts
+Process the cleaned texts:
+```bash
+python preprocess_texts.py raw_texts/ processed_texts/
+```
 
-command: python preprocess_texts.py raw_texts/ processed_texts/
+This step:
+- Tokenizes sentences and words
+- Performs lemmatization
+- Generates dependency parses
+- Exports structured JSON output
 
-example output: [
-    {
-        "sentence": "I have dreamed it.",
-        "tokens": ["I", "have", "dreamed", "it", "."],
-        "lemmas": ["I", "have", "dream", "it", "."],
-        "parsed_order": "nsubj aux ROOT obj punct"
+## Output Format
+The preprocessing generates JSON files with the following structure:
+```json
+{
+    "metadata": {
+        "source_url": "https://www.gutenberg.org/files/1342/1342-0.txt",
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "processing_date": "2025-01-13",
+        "word_count": 122204
     },
-    {
-        "sentence": "She gave me the diamond.",
-        "tokens": ["She", "gave", "me", "the", "diamond", "."],
-        "lemmas": ["she", "give", "I", "the", "diamond", "."],
-        "parsed_order": "nsubj ROOT obj det pobj punct"
-    }
-]
+    "sentences": [
+        {
+            "sentence": "I have dreamed it.",
+            "tokens": ["I", "have", "dreamed", "it", "."],
+            "lemmas": ["I", "have", "dream", "it", "."],
+            "parsed_order": "nsubj aux ROOT obj punct",
+            "pos_tags": ["PRON", "AUX", "VERB", "PRON", "PUNCT"],
+            "sentence_index": 1
+        }
+    ]
+}
+```
 
-### Step 5: Analyze Results
-Once the data is preprocessed load the JSON files into your statistical analysis tools or python scripts for further analysis. It is recommended to use python libraries like pandas, scikit-learn or matplotlib for visualization and modeling
+## Known Limitations
 
-### Limitations: 
-1. OCR Errors: Text from Project Gutenberg may contain scanning or formatting erros.
-2. Parsing Accuracy: Dependency parsing relies on spaCy's English model, which might not handle complex or archaic sentence structures effectively
-3. Metadata: Additional metadata is not automatically extracted and must be provided seperately
+1. **OCR Quality**:
+   - Project Gutenberg texts may contain scanning errors
+   - Historical texts might use archaic spelling variants
+   - Special characters may be inconsistently encoded
 
+2. **Linguistic Processing**:
+   - Dependency parsing accuracy varies with sentence complexity
+   - Limited support for historical English variants
+   - spaCy's English model may struggle with archaic constructions
+   - Poetry and non-standard formatting may cause parsing errors
+
+3. **Metadata Handling**:
+   - Author and title extraction may be incomplete
+   - Publication dates not automatically extracted
+   - Genre classification requires manual input
+   - Multiple editions not automatically differentiated
+
+## Troubleshooting
+
+### Common Issues
+1. **URL Access Errors**:
+   - Check internet connection
+   - Verify Project Gutenberg server status
+   - Ensure URL format is correct
+   - Consider using a VPN if access is restricted
+
+2. **Processing Errors**:
+   - Increase memory allocation for large texts
+   - Check disk space availability
+   - Verify file permissions
+   - Check Python version compatibility
+
+### Error Reporting
+Please report issues through GitHub with:
+- Error message and stack trace
+- Sample input causing the error
+- System specifications
+- Steps to reproduce
+
+## Contributing
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
