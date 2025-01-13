@@ -10,9 +10,6 @@ This project automates the downloading, cleaning, and preprocessing of texts fro
 - [Usage Examples](#usage-examples)
 - [Output Format](#output-format)
 - [Known Limitations](#known-limitations)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Prerequisites
 
@@ -159,19 +156,3 @@ The preprocessing generates JSON files with the following structure:
    - Check disk space availability
    - Verify file permissions
    - Check Python version compatibility
-
-### Error Reporting
-Please report issues through GitHub with:
-- Error message and stack trace
-- Sample input causing the error
-- System specifications
-- Steps to reproduce
-
-## Contributing
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
