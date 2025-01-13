@@ -46,8 +46,8 @@ python -m spacy download en_core_web_sm
 ### Step 1: Project Setup
 1. Clone the repository:
 ```bash
-git clone https://github.com/nathanlesman/gutenberg-preprocessing.git
-cd gutenberg-preprocessing
+git clone https://github.com/nathanlesman/research-information-science/code.git
+cd research-information-science/code
 ```
 
 2. Create virtual environment (recommended):
