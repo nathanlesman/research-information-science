@@ -46,7 +46,7 @@ python -m spacy download en_core_web_sm
 ### Step 1: Project Setup
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/gutenberg-preprocessing.git
+git clone https://github.com/nathanlesman/gutenberg-preprocessing.git
 cd gutenberg-preprocessing
 ```
 
