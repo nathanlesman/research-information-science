@@ -24,9 +24,7 @@ How do quantifiable sociocultural factors (multilingualism prevalence, social ne
 
 ### Data Collection
 - Project Gutenberg corpus analysis
-- Sociolinguistic surveys
 - Computational simulations
-- Case studies from diverse multilingual regions
 
 ### Data Processing
 1. Text cleaning and standardization
